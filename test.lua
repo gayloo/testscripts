@@ -1,4 +1,4 @@
-print(FUCK)
+print("FUCK")
 local ScreenGui = Instance.new("ScreenGui")
 local MadeByBloxi = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
