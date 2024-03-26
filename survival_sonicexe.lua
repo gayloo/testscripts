@@ -53,3 +53,10 @@ local Event = game:GetService("ReplicatedStorage").events.action
 Event:FireServer(A_1, A_2)
   end
 end)
+
+uis.InputBegan:Connect(function(input, p)
+  if p then return end
+  if input.KeyCode == Enum.KeyCode.P then
+game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("infect"):FireServer()
+  end
+end)
