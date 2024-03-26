@@ -155,7 +155,7 @@ local function getRandomReply(messageType)
         otherdo = {
             "it's ok, i bet you can win the next round!",
             "that's fine, you don't need to go all out on a lego game!",
-            "oh... well, i still believe in you! go and try again! you are possible!"
+            "oh... well," .. speaker .. ", still believe in you! go and try again! you are possible!"
         }
     }
     
