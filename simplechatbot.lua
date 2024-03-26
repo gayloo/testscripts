@@ -1,5 +1,6 @@
 local player = game.Players.LocalPlayer
 local chatService = game:GetService("Chat")
+local followplayer = nil
 
 local function checkMessageType(message)
     -- Check for insulting keywords
