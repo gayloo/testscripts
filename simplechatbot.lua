@@ -3,8 +3,33 @@ local chatService = game:GetService("Chat")
 
 local function checkMessageType(message)
     -- Check for insulting keywords
-    if string.find(message, "idiot") or string.find(message, "stupid") or string.find(message, "fat") then
+    if string.find(message, "idiot") or string.find(message, "stupid") or string.find(message, "fat") or string.find(message, "nerd") then
         return "insult"
+    end
+
+    -- toxicity?!?!
+    if string.find(message, "you") and string.find(message, "bad") then
+        return "insult"
+    end
+
+    -- toxic part 2?!?!
+    if string.find(message, "your") and string.find(message, "bad") then
+        return "insult"
+    end
+
+    -- akshully
+    if string.find(message, "you're") and string.find(message, "bad") then
+        return "insult"
+    end
+
+    -- akshully part 2
+    if string.find(message, "youre") and string.find(message, "bad") then
+        return "insult"
+    end
+
+    -- so smart!!!!
+    if string.find(message, "'") and string.find(message, "*") then
+        return "nerd"
     end
 
     -- Check for insulting keywords
@@ -30,6 +55,22 @@ local function checkMessageType(message)
 
     if string.find(message, "i") and string.find(message, "won") then
         return "otherwinner"
+    end
+
+    if string.find(message, "you") and string.find(message, "lost") then
+        return "playerdo"
+    end
+
+    if string.find(message, "you") and string.find(message, "lose") then
+        return "playerdo"
+    end
+
+    if string.find(message, "i") and string.find(message, "lost") then
+        return "otherdo"
+    end
+
+    if string.find(message, "i") and string.find(message, "lose") then
+        return "otherdo"
     end
     
     -- Default to normal if no specific type is found
@@ -91,7 +132,24 @@ local function getRandomReply(messageType)
             "congrats.",
             "congradulations!",
             "you won!",
-            "you did it!"
+            "you did it!",
+            "*clapping*",
+            "*clapping sfx*"
+        }
+        nerd = {
+            "ok? im a chatbot, you think that correcting me would do anything?",
+            "uh... ok? im a chatbot, you think that correcting me would do anything?"
+        }
+        playerdo = {
+            "aw...",
+            ":(",
+            "i'll win next time! i believe in myself!",
+            "oh..."
+        }
+        otherdo = {
+            "it's ok, i bet you can win the next round!",
+            "that's fine, you don't need to go all out on a lego game!",
+            "oh... well, i still believe in you! go and try again! you are possible!"
         }
     }
     
