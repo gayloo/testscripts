@@ -12,33 +12,14 @@ uis.InputBegan:Connect(function(input, f)
   if f then return end
   if input.KeyCode == Enum.KeyCode.F then
 game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("action"):FireServer("attack")
-  end
-end)
-
-uis.InputBegan:Connect(function(input, n)
-  if n then return end
-  if input.KeyCode == Enum.KeyCode.N then
-game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("action"):FireServer("set shock")
-  end
-end)
-
-uis.InputBegan:Connect(function(input, wan)
-  if wan then return end
-  if input.KeyCode == Enum.KeyCode.One then
-game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("action"):FireServer("set shield")
-  end
-end)
-
-uis.InputBegan:Connect(function(input, toooooo)
-  if toooooo then return end
-  if input.KeyCode == Enum.KeyCode.Two then
-game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("action"):FireServer("arm cannon")
+wait(0.8)
+game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("action"):FireServer("stop attack")
   end
 end)
 
 uis.InputBegan:Connect(function(input, tree)
   if tree then return end
-  if input.KeyCode == Enum.KeyCode.Three then
+  if input.KeyCode == Enum.KeyCode.R then
 game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("action"):FireServer("speed boost")
   end
 end)
