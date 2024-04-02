@@ -1,4 +1,4 @@
-print("hi")
+print("hnoi")
 local player = game.Players.LocalPlayer
 local chatService = game:GetService("Chat")
 local followPlayer = nil
@@ -175,8 +175,8 @@ Players.PlayerAdded:Connect(function(player)
 		print(speaker)
 
 		if speaker ~= player and messageType ~= "normal" then
-			local distance = (speaker.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).magnitude
-			if distance <= 30 then
+			local distance = (speaker.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+			if distance >= 30 then
 				local randomtime = math.random(1,3)
 				wait(randomtime)
 				local reply = getRandomReply(messageType)
