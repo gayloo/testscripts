@@ -166,9 +166,10 @@ local function getRandomReply(messageType)
 	return messageReplies[math.random(1, #messageReplies)]
 end
 
-	chatService.Chatted:Connect(function(message)
+game.ReplicatedStorage.DefaultChatSystemChatEvents.OnNewMessage:Connect(function(message)
 		local speaker = message.Speaker
 		local messageType = checkMessageType(message.Message)
+		print(speaker)
 
 		if speaker ~= player and messageType ~= "normal" then
 			local distance = (speaker.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).magnitude
@@ -176,7 +177,7 @@ end
 				local randomtime = math.random(1,3)
 				wait(randomtime)
 				local reply = getRandomReply(messageType)
-				chatService:Chat(player.Character.Head, reply, Enum.ChatColor.Blue)
+			game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(reply, "All")
 			end
 		end
 	end)
