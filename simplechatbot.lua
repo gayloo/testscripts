@@ -1,4 +1,4 @@
-print("hi again")
+print("hi")
 local player = game.Players.LocalPlayer
 local chatService = game:GetService("Chat")
 local followPlayer = nil
@@ -166,7 +166,10 @@ local function getRandomReply(messageType)
 	return messageReplies[math.random(1, #messageReplies)]
 end
 
-game.ReplicatedStorage.DefaultChatSystemChatEvents.OnNewMessage:Connect(function(message)
+local Players = game:GetService("Players")
+
+Players.PlayerAdded:Connect(function(player)
+	player.Chatted:Connect(function(message)
 		local speaker = message.Speaker
 		local messageType = checkMessageType(message.Message)
 		print(speaker)
@@ -181,3 +184,4 @@ game.ReplicatedStorage.DefaultChatSystemChatEvents.OnNewMessage:Connect(function
 			end
 		end
 	end)
+end)
