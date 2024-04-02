@@ -166,8 +166,7 @@ local function getRandomReply(messageType)
 	return messageReplies[math.random(1, #messageReplies)]
 end
 
-chatService.ChatLoaded:Connect(function()
-	chatService.MessagePosted:Connect(function(message)
+	chatService.Chatted:Connect(function(message)
 		local speaker = message.Speaker
 		local messageType = checkMessageType(message.Message)
 
@@ -181,4 +180,3 @@ chatService.ChatLoaded:Connect(function()
 			end
 		end
 	end)
-end)
