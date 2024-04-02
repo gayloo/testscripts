@@ -1,4 +1,4 @@
-print("hi")
+print("hi again")
 local player = game.Players.LocalPlayer
 local chatService = game:GetService("Chat")
 local followPlayer = nil
