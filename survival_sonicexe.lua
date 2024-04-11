@@ -41,3 +41,16 @@ uis.InputBegan:Connect(function(input, p)
 game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("infect"):FireServer()
   end
 end)
+
+uis.InputBegan:Connect(function(input, l)
+      if l then return end
+        if input.KeyCode == Enum.KeyCode.L then
+          for i,v in pairs(game.Players:GetChildren()) do
+            local name = v.Name
+            local A_1 = "revive"
+            local A_2 = game.Workspace[name]
+            local Event = game:GetService("ReplicatedStorage").events.action
+            Event:FireServer(A_1, A_2)
+        end
+    end
+end)
