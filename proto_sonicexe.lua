@@ -33,24 +33,7 @@ game.ReplicatedStorage.remotes.morphs:FireServer("rouge")
   end
 end)
 
-local todd = 0
-while wait() do
-	for i, sun in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-		if sun.Name == "chargeOrientation" then
-		sun.Parent.chargeBoost.Enabled = false
-		sun.Enabled = false
-		if sun == nil or todd >= 110 then
-			sun:Destroy()
-			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 39
-			local todd = 0
-		else
-			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 99
-			local todd = todd + 1
-			end
-		end
-	end
-end
-
+print("Updated Lobby!")
 
 -- seperator
 
