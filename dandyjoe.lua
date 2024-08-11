@@ -1,10 +1,10 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "toe",IntroText = "toe", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "toe",IntroText = "toe, you!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local tab = Window:MakeTab({
-    Name = "Main",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
 })
 
 local pl = game.Players.LocalPlayer
@@ -12,7 +12,7 @@ local char = pl.Character
 local humanoid = char:WaitForChild("Humanoid")
 
 local table = {
-    speed = 0
+	speed = 0
 }
 
 tab:AddSlider({
@@ -24,7 +24,7 @@ tab:AddSlider({
 	Increment = 1,
 	ValueName = "Walk speed",
 	Callback = function(Value)
-            table.speed = Value
+		table.speed = Value
 	end    
 })
 
@@ -32,12 +32,12 @@ tab:AddSlider({
 local on = false
 
 tab:AddButton({
-    Name = "Change walk speed",
-    Callback = function(bool)
-            while  Wait() do
-                humanoid.WalkSpeed = table.speed
-            end
-    end
+	Name = "Change walk speed",
+	Callback = function(bool)
+		while wait() do
+			humanoid.WalkSpeed = table.speed
+		end
+	end
 
 })
 
@@ -51,27 +51,28 @@ esp.OutlineTransparency = 1
 
 
 tab:AddButton({
-    Name = "Monsters esp",
-    Callback = function()
+	Name = "Esp stuff",
+	Callback = function()
 
-       for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
-        if k:IsA("Model") then
-            local room = k
-            for _,v in pairs(room:FindFirstChild("Monsters"):GetChildren()) do
-                local folder = v
-                runservice.Heartbeat:Connect(function()
-                    for _, v in pairs(folder:GetChildren()) do
-                        repeat Wait() until v
-                        if not v:FindFirstChild("hl") then
-                            local hlclone = esp:Clone()
-                            hlclone.Adornee = v
-                            hlclone.Parent = v
-                        end
-                    end
-                end)
-            end
-        end
-       end
-        
-    end
+		for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
+			if k:IsA("Model") and string.match(k, "Room", 1) then
+				local room = k
+				for _,v in pairs(room:FindFirstChild("Monsters"):GetChildren()) do
+					local folder = v
+					runservice.Heartbeat:Connect(function()
+						for _, v in pairs(folder:GetChildren()) do
+							repeat wait() until v
+							if not v:FindFirstChild("hl", 3) then
+								local hlclone = esp:Clone()
+								hlclone.Adornee = v
+								hlclone.Parent = v
+								print("added")
+							end
+						end
+					end)
+				end
+			end
+		end
+
+	end
 })
