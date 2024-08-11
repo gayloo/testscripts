@@ -55,7 +55,7 @@ tab:AddButton({
 	Callback = function()
 
 		for _,k in pairs(game.Workspace.CurrentRoom:GetChildren()) do
-			if k:IsA("Model") and string.match(k, "Room", 1) then
+			if k:IsA("Model") and string.match(k.Name, "Room", 1) then
 				local room = k
 				for _,v in pairs(room:FindFirstChild("Monsters"):GetChildren()) do
 					local folder = v
