@@ -274,6 +274,7 @@ local function setupExeDetector()
 end
 
 local function toggleExeEsp(state)
+		--[[
     if state then
         setupExeDetector()
     else
@@ -284,6 +285,9 @@ local function toggleExeEsp(state)
             end
         end
     end
+	]]--
+
+	print("nopers")
 end
 
 local characterColors = {
@@ -471,7 +475,7 @@ local ReviveActions = Tab:CreateToggle({
                            [2] = workspace:FindFirstChild(player.Name)
                        }
                        if args[2] then
-                           game:GetService("ReplicatedStorage"):WaitForChild("remotes"):WaitForChild("actions"):FireServer(unpack(args))
+                           game.ReplicatedStorage.remotes.actions:FireServer(unpack(args))
                        end
                    end
                    task.wait()
